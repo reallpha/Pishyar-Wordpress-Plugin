@@ -9,12 +9,12 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:'Sahel',system-ui,-apple-system,sans-serif;background:#fafbfc;color:#0f172a;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'Sahel',system-ui,-apple-system,sans-serif;background:#fafbfc;color:#0f172a;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:16px}
 img{display:block;max-width:100%;height:auto}
 
 /* ===== UTILITIES ===== */
-.bg-grid{background-image:linear-gradient(rgba(15,23,42,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.04) 1px,transparent 1px);background-size:32px 32px}
-.bg-dots{background-image:radial-gradient(rgba(15,23,42,.08) 1px,transparent 1px);background-size:20px 20px}
+.bg-grid{background-image:linear-gradient(rgba(15,23,42,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.03) 1px,transparent 1px);background-size:32px 32px}
+.bg-dots{background-image:radial-gradient(rgba(15,23,42,.06) 1px,transparent 1px);background-size:20px 20px}
 .mx-auto{margin-left:auto;margin-right:auto}
 .text-center{text-align:center}
 .flex{display:flex}
@@ -22,151 +22,136 @@ img{display:block;max-width:100%;height:auto}
 .flex-wrap{flex-wrap:wrap}
 .items-center{align-items:center}
 .items-start{align-items:flex-start}
-.items-baseline{align-items:baseline}
 .justify-center{justify-content:center}
 .justify-between{justify-content:space-between}
-.gap-1{gap:4px}
-.gap-1\.5{gap:6px}
-.gap-2{gap:8px}
-.gap-2\.5{gap:10px}
-.gap-3{gap:12px}
-.gap-4{gap:16px}
-.gap-5{gap:20px}
+.gap-1{gap:4px}.gap-2{gap:8px}.gap-3{gap:12px}.gap-4{gap:16px}.gap-5{gap:20px}
 .relative{position:relative}
 .absolute{position:absolute}
 .overflow-hidden{overflow:hidden}
 .pointer-events-none{pointer-events:none}
-.whitespace-nowrap{white-space:nowrap}
 .inline-flex{display:inline-flex}
-.inline-block{display:inline-block}
 .grid{display:grid}
-.hidden{display:none}
-.shrink-0{flex-shrink:0}
+.cursor-pointer{cursor:pointer}
 
-@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(3deg)}}
-@keyframes float-slow{0%,100%{transform:translate(0,0)}33%{transform:translate(16px,-16px)}66%{transform:translate(-12px,8px)}}
-@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.5}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-20px) rotate(2deg)}}
+@keyframes float-slow{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(15px,-15px) scale(1.05)}}
+@keyframes pulse-glow{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.7;transform:scale(1.1)}}
+@keyframes spin-slow{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 .animate-float{animation:float 8s ease-in-out infinite}
-.animate-float-slow{animation:float-slow 14s ease-in-out infinite}
-.animate-pulse-dot{animation:pulse-dot 2s ease-in-out infinite}
+.animate-float-slow{animation:float-slow 12s ease-in-out infinite}
+.animate-pulse-glow{animation:pulse-glow 6s ease-in-out infinite}
+.animate-spin-slow{animation:spin-slow 20s linear infinite}
 
 /* ===== CONTAINER ===== */
 .container{max-width:1280px;margin:0 auto;padding:0 20px}
 @media(min-width:1024px){.container{padding:0 32px}}
 
 /* ===== SECTION SPACING ===== */
-.sec{padding:64px 0}
-@media(min-width:1024px){.sec{padding:96px 0}}
-.sec-sm{padding:52px 0}
-@media(min-width:1024px){.sec-sm{padding:72px 0}}
+.sec{padding:72px 0;position:relative;overflow:hidden}
+@media(min-width:1024px){.sec{padding:100px 0}}
+.sec-sm{padding:60px 0;position:relative;overflow:hidden}
+@media(min-width:1024px){.sec-sm{padding:80px 0}}
 
 /* ===== LABEL PILL ===== */
-.label-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
-.label-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0}
+.label-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:800;letter-spacing:.5px;margin-bottom:16px}
+.label-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
 .label-indigo{background:#eef2ff;color:#4338ca}.label-indigo .label-dot{background:#6366f1}
 .label-violet{background:#f5f3ff;color:#6d28d9}.label-violet .label-dot{background:#8b5cf6}
 .label-emerald{background:#ecfdf5;color:#047857}.label-emerald .label-dot{background:#10b981}
 .label-blue{background:#eff6ff;color:#1d4ed8}.label-blue .label-dot{background:#3b82f6}
 .label-amber{background:#fffbeb;color:#b45309}.label-amber .label-dot{background:#f59e0b}
+.label-rose{background:#fff1f2;color:#be123c}.label-rose .label-dot{background:#f43f5e}
 
 /* ===== SECTION TITLES ===== */
-.sec-title{font-size:1.8rem;font-weight:900;color:#0f172a;letter-spacing:-.3px;margin-bottom:8px;line-height:1.3}
-.sec-desc{color:#64748b;max-width:540px;margin:0 auto 40px;font-size:14px;line-height:1.8}
-@media(min-width:640px){.sec-title{font-size:2.3rem}}
-@media(min-width:1024px){.sec-title{font-size:2.8rem}.sec-desc{font-size:15px}}
+.sec-title{font-size:2rem;font-weight:900;color:#0f172a;letter-spacing:-.5px;margin-bottom:12px;line-height:1.3}
+.sec-desc{color:#64748b;max-width:600px;margin:0 auto 48px;font-size:1.05rem;line-height:1.8;font-weight:500}
+@media(min-width:640px){.sec-title{font-size:2.5rem}.sec-desc{font-size:1.1rem}}
+@media(min-width:1024px){.sec-title{font-size:3rem}}
 
 /* ===== HERO ===== */
-.hero{padding:56px 0 64px;position:relative;overflow:hidden}
-@media(min-width:1024px){.hero{padding:80px 0 96px}}
+.hero{padding:64px 0 80px;position:relative;overflow:hidden}
+@media(min-width:1024px){.hero{padding:90px 0 110px}}
 .hero .container{position:relative;z-index:1}
-.hero-decor-1,.hero-decor-2{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
-.hero-decor-1{top:0;right:25%;width:500px;height:500px;background:rgba(165,180,252,.3)}
-.hero-decor-2{bottom:0;left:25%;width:400px;height:400px;background:rgba(196,181,253,.3)}
-.hero-grid{position:absolute;inset:0;opacity:.6;pointer-events:none;background-image:linear-gradient(rgba(15,23,42,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.04) 1px,transparent 1px);background-size:32px 32px}
+.hero-decor-1,.hero-decor-2{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;will-change:transform}
+.hero-decor-1{top:-10%;right:20%;width:600px;height:600px;background:rgba(165,180,252,.25)}
+.hero-decor-2{bottom:-10%;left:20%;width:500px;height:500px;background:rgba(196,181,253,.25)}
+.hero-grid{position:absolute;inset:0;opacity:.5;pointer-events:none;background-image:linear-gradient(rgba(15,23,42,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.03) 1px,transparent 1px);background-size:40px 40px}
 
 @media(min-width:1024px){
-.hero-row{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.hero-row{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
 }
 .hero-copy{text-align:center}
 @media(min-width:1024px){.hero-copy{text-align:right}}
 
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #e2e8f0;padding:6px 16px;border-radius:100px;font-size:12px;font-weight:700;color:#334155;box-shadow:0 1px 3px rgba(0,0,0,.04);margin-bottom:20px}
-.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#6366f1;flex-shrink:0}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #e2e8f0;padding:8px 18px;border-radius:100px;font-size:13px;font-weight:700;color:#334155;box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:24px}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:#6366f1;flex-shrink:0}
 
-.hero h1{font-size:2rem;font-weight:900;line-height:1.2;color:#0f172a;letter-spacing:-.5px;margin-bottom:20px}
-@media(min-width:640px){.hero h1{font-size:2.6rem}}
-@media(min-width:1024px){.hero h1{font-size:3.2rem}}
+.hero h1{font-size:2.2rem;font-weight:900;line-height:1.25;color:#0f172a;letter-spacing:-.5px;margin-bottom:24px}
+@media(min-width:640px){.hero h1{font-size:2.8rem}}
+@media(min-width:1024px){.hero h1{font-size:3.4rem}}
 .hero h1 .grad{background:linear-gradient(to left,#6366f1,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero h1 .grad-wrap{position:relative;display:inline-block}
-.hero h1 .grad-wrap svg{position:absolute;bottom:-6px;right:0;width:100%;height:10px}
+.hero h1 .grad-wrap svg{position:absolute;bottom:-8px;right:0;width:100%;height:12px}
 
-.hero p{font-size:15px;color:#64748b;line-height:1.9;max-width:540px;margin:0 auto 28px}
-@media(min-width:1024px){.hero p{margin:0 0 28px 0;font-size:16px}}
+.hero p{font-size:1.15rem;color:#475569;line-height:1.9;max-width:600px;margin:0 auto 36px;font-weight:500}
+@media(min-width:1024px){.hero p{margin:0 0 36px 0;font-size:1.2rem}}
 
-.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:640px;margin:0 auto}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:640px;margin:0 auto}
 @media(min-width:1024px){.hero-stats{grid-template-columns:repeat(4,1fr);margin:0}}
-.hero-stat{background:#fff;border:1px solid rgba(226,232,240,.8);border-radius:14px;padding:14px 12px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.03)}
-.hero-stat .hs-num{font-size:1.4rem;font-weight:900;background:linear-gradient(to bottom right,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;margin-bottom:3px}
-.hero-stat .hs-lbl{font-size:11px;font-weight:600;color:#94a3b8}
+.hero-stat{background:#fff;border:1px solid rgba(226,232,240,.8);border-radius:16px;padding:18px 14px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.03);transition:transform .3s}
+.hero-stat:hover{transform:translateY(-3px)}
+.hero-stat .hs-num{font-size:1.8rem;font-weight:900;background:linear-gradient(to bottom right,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;margin-bottom:6px}
+.hero-stat .hs-lbl{font-size:13px;font-weight:700;color:#64748b}
 
 /* Hero floating previews (desktop) */
 .hero-preview-wrap{display:none}
 @media(min-width:1024px){.hero-preview-wrap{display:block;position:relative}}
-.hero-preview-main{position:relative;background:#fff;border-radius:22px;border:1px solid #e2e8f0;padding:10px;transform:rotate(-2deg);box-shadow:0 20px 50px rgba(148,163,184,.3);transition:transform .4s}
+.hero-preview-main{position:relative;background:#fff;border-radius:24px;border:1px solid #e2e8f0;padding:12px;transform:rotate(-2deg);box-shadow:0 25px 60px rgba(148,163,184,.25);transition:transform .4s}
 .hero-preview-main:hover{transform:rotate(0)}
-.hero-preview-main .mac-bar{display:flex;align-items:center;gap:5px;padding:6px 4px}
-.hero-preview-main .mac-dot{width:10px;height:10px;border-radius:50%}
+.hero-preview-main .mac-bar{display:flex;align-items:center;gap:6px;padding:8px 6px}
+.hero-preview-main .mac-dot{width:11px;height:11px;border-radius:50%}
 .hero-preview-main .mac-dot.red{background:#f87171}
 .hero-preview-main .mac-dot.yel{background:#fbbf24}
 .hero-preview-main .mac-dot.grn{background:#4ade80}
-.hero-preview-main .mac-line{flex:1;height:16px;margin:0 10px;background:#f1f5f9;border-radius:100px}
-.hero-preview-main img{border-radius:14px;width:100%}
+.hero-preview-main .mac-line{flex:1;height:18px;margin:0 12px;background:#f1f5f9;border-radius:100px}
+.hero-preview-main img{border-radius:16px;width:100%}
 
-.hero-preview-sml{position:absolute;bottom:-28px;left:-36px;width:200px;background:#fff;border-radius:16px;border:1px solid #e2e8f0;padding:7px;transform:rotate(4deg);box-shadow:0 15px 30px rgba(0,0,0,.1);transition:transform .4s}
-.hero-preview-sml:hover{transform:rotate(0)}
-.hero-preview-sml .mac-bar{gap:4px;padding:3px 2px;display:flex;align-items:center}
-.hero-preview-sml .mac-dot{width:7px;height:7px;border-radius:50%}
-.hero-preview-sml .mac-dot.red{background:#f87171}
-.hero-preview-sml .mac-dot.yel{background:#fbbf24}
-.hero-preview-sml .mac-dot.grn{background:#4ade80}
-.hero-preview-sml img{border-radius:10px;width:100%}
+.hero-preview-badge{position:absolute;top:-16px;left:-16px;background:linear-gradient(to bottom right,#6366f1,#8b5cf6);color:#fff;border-radius:18px;padding:12px 16px;transform:rotate(3deg);box-shadow:0 12px 35px rgba(99,102,241,.3)}
+.hero-preview-badge .flex{display:flex;align-items:center;gap:8px}
+.hero-preview-badge svg{width:20px;height:20px}
+.hero-preview-badge .num{font-size:1.2rem;font-weight:900;line-height:1.1}
+.hero-preview-badge .lbl{font-size:11px;font-weight:700;opacity:.9}
 
-.hero-preview-badge{position:absolute;top:-14px;left:-14px;background:linear-gradient(to bottom right,#6366f1,#8b5cf6);color:#fff;border-radius:16px;padding:10px 14px;transform:rotate(3deg);box-shadow:0 10px 30px rgba(99,102,241,.3)}
-.hero-preview-badge .flex{display:flex;align-items:center;gap:7px}
-.hero-preview-badge svg{width:18px;height:18px}
-.hero-preview-badge .num{font-size:1.1rem;font-weight:900;line-height:1.1}
-.hero-preview-badge .lbl{font-size:10px;font-weight:700;opacity:.9}
-
-.hero-preview-check{position:absolute;top:45%;right:-52px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;padding:8px 10px;box-shadow:0 8px 25px rgba(0,0,0,.06);display:flex;align-items:center;gap:8px}
-.hero-preview-check .check-circle{width:24px;height:24px;border-radius:50%;background:#d1fae5;display:flex;align-items:center;justify-content:center}
-.hero-preview-check .check-circle svg{width:14px;height:14px;color:#059669}
-.hero-preview-check .t1{font-size:11px;font-weight:700;color:#0f172a}
-.hero-preview-check .t2{font-size:9px;color:#94a3b8}
+.hero-preview-check{position:absolute;top:45%;right:-60px;background:#fff;border-radius:14px;border:1px solid #e2e8f0;padding:10px 14px;box-shadow:0 10px 30px rgba(0,0,0,.06);display:flex;align-items:center;gap:10px}
+.hero-preview-check .check-circle{width:28px;height:28px;border-radius:50%;background:#d1fae5;display:flex;align-items:center;justify-content:center}
+.hero-preview-check .check-circle svg{width:16px;height:16px;color:#059669}
+.hero-preview-check .t1{font-size:12px;font-weight:700;color:#0f172a}
+.hero-preview-check .t2{font-size:10px;color:#94a3b8}
 
 /* Hero mobile preview */
-.hero-mob-preview{display:block;margin-top:36px}
+.hero-mob-preview{display:block;margin-top:40px}
 @media(min-width:1024px){.hero-mob-preview{display:none}}
-.hero-mob-preview .mob-wrap{position:relative;background:#fff;border-radius:22px;border:1px solid #e2e8f0;padding:9px;box-shadow:0 15px 40px rgba(0,0,0,.08);max-width:400px;margin:0 auto}
-.hero-mob-preview .mac-bar{display:flex;align-items:center;gap:5px;padding:5px 4px}
-.hero-mob-preview .mac-dot{width:8px;height:8px;border-radius:50%}
+.hero-mob-preview .mob-wrap{position:relative;background:#fff;border-radius:24px;border:1px solid #e2e8f0;padding:10px;box-shadow:0 20px 50px rgba(0,0,0,.08);max-width:420px;margin:0 auto}
+.hero-mob-preview .mac-bar{display:flex;align-items:center;gap:6px;padding:6px 5px}
+.hero-mob-preview .mac-dot{width:9px;height:9px;border-radius:50%}
 .hero-mob-preview .mac-dot.red{background:#f87171}
 .hero-mob-preview .mac-dot.yel{background:#fbbf24}
 .hero-mob-preview .mac-dot.grn{background:#4ade80}
-.hero-mob-preview .mac-line{flex:1;height:14px;margin:0 8px;background:#f1f5f9;border-radius:100px}
-.hero-mob-preview img{border-radius:14px;width:100%}
+.hero-mob-preview .mac-line{flex:1;height:16px;margin:0 10px;background:#f1f5f9;border-radius:100px}
+.hero-mob-preview img{border-radius:16px;width:100%}
 
 /* ===== FEATURES BENTO ===== */
-.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(min-width:768px){.feat-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:14px}}
-.feat-card{position:relative;background:#fff;border:1px solid rgba(226,232,240,.8);border-radius:16px;padding:22px 16px;transition:all .3s}
-.feat-card:hover{box-shadow:0 12px 30px rgba(148,163,184,.2);transform:translateY(-3px);border-color:rgba(165,180,252,.5)}
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:768px){.feat-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:16px}}
+.feat-card{position:relative;background:#fff;border:1px solid rgba(226,232,240,.8);border-radius:18px;padding:26px 20px;transition:all .3s}
+.feat-card:hover{box-shadow:0 15px 35px rgba(148,163,184,.15);transform:translateY(-4px);border-color:rgba(165,180,252,.5)}
 @media(min-width:768px){.feat-card.col-span-2{grid-column:span 2}}
-.feat-icon-wrap{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:transform .3s}
+.feat-icon-wrap{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:transform .3s}
 .feat-card:hover .feat-icon-wrap{transform:scale(1.1)}
-.feat-icon-wrap svg{width:20px;height:20px;color:#fff}
-.feat-card h4{font-size:14px;font-weight:800;color:#0f172a;margin-bottom:3px}
-.feat-card p{font-size:12px;color:#94a3b8;line-height:1.7}
-@media(min-width:640px){.feat-card h4{font-size:15px}}
+.feat-icon-wrap svg{width:22px;height:22px;color:#fff}
+.feat-card h4{font-size:15px;font-weight:800;color:#0f172a;margin-bottom:4px}
+.feat-card p{font-size:13px;color:#64748b;line-height:1.7;font-weight:500}
+@media(min-width:640px){.feat-card h4{font-size:16px}.feat-card p{font-size:14px}}
 .feat-icon-1{background:linear-gradient(to bottom right,#f472b6,#fb7185)}
 .feat-icon-2{background:linear-gradient(to bottom right,#fbbf24,#ea580c)}
 .feat-icon-3{background:linear-gradient(to bottom right,#34d399,#0d9488)}
@@ -179,104 +164,107 @@ img{display:block;max-width:100%;height:auto}
 .feat-icon-10{background:linear-gradient(to bottom right,#14b8a6,#34d399)}
 
 /* ===== SHOWCASE ===== */
-.showcase-list{display:flex;flex-direction:column;gap:24px}
-@media(min-width:1024px){.showcase-list{gap:28px}}
-.showcase-card{display:grid;background:#fff;border-radius:22px;border:1px solid #e2e8f0;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.03);transition:box-shadow .4s}
-.showcase-card:hover{box-shadow:0 15px 35px rgba(0,0,0,.08)}
+.showcase-list{display:flex;flex-direction:column;gap:28px}
+@media(min-width:1024px){.showcase-list{gap:32px}}
+.showcase-card{display:grid;background:#fff;border-radius:24px;border:1px solid #e2e8f0;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.03);transition:box-shadow .4s}
+.showcase-card:hover{box-shadow:0 20px 40px rgba(0,0,0,.08)}
 @media(min-width:1024px){.showcase-card{grid-template-columns:1fr 1fr}}
-.showcase-text{padding:24px 20px;position:relative;display:flex;flex-direction:column;justify-content:center}
-@media(min-width:640px){.showcase-text{padding:36px 28px}}
-@media(min-width:1024px){.showcase-text{padding:44px 40px}}
-.showcase-text .sc-num{position:absolute;top:12px;left:16px;font-size:5rem;font-weight:900;color:#f1f5f9;line-height:1;pointer-events:none;user-select:none}
-@media(min-width:1024px){.showcase-text .sc-num{top:14px;left:24px;font-size:7rem}}
+.showcase-text{padding:28px 24px;position:relative;display:flex;flex-direction:column;justify-content:center}
+@media(min-width:640px){.showcase-text{padding:40px 32px}}
+@media(min-width:1024px){.showcase-text{padding:48px 44px}}
+.showcase-text .sc-num{position:absolute;top:16px;left:20px;font-size:5rem;font-weight:900;color:#f1f5f9;line-height:1;pointer-events:none;user-select:none}
+@media(min-width:1024px){.showcase-text .sc-num{top:20px;left:28px;font-size:7.5rem}}
 
-.showcase-tag{display:inline-flex;align-items:center;gap:5px;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;margin-bottom:12px;width:fit-content;box-shadow:0 1px 3px rgba(0,0,0,.1)}
-.showcase-tag .tag-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.8)}
-.showcase-tag.rose{background:#f43f5e}
-.showcase-tag.amber{background:#f59e0b}
-.showcase-tag.emerald{background:#10b981}
-.showcase-tag.violet{background:#8b5cf6}
-.showcase-tag.blue{background:#3b82f6}
-.showcase-tag.red{background:#ef4444}
-.showcase-tag.cyan{background:#06b6d4}
-.showcase-tag.indigo{background:#6366f1}
+.showcase-tag{display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;margin-bottom:14px;width:fit-content;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+.showcase-tag .tag-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.8)}
+.showcase-tag.rose{background:#f43f5e}.showcase-tag.amber{background:#f59e0b}.showcase-tag.emerald{background:#10b981}
+.showcase-tag.violet{background:#8b5cf6}.showcase-tag.blue{background:#3b82f6}.showcase-tag.red{background:#ef4444}
+.showcase-tag.cyan{background:#06b6d4}.showcase-tag.indigo{background:#6366f1}
 
-.showcase-text h3{font-size:1.3rem;font-weight:900;color:#0f172a;margin-bottom:10px;line-height:1.4;letter-spacing:-.2px}
-@media(min-width:1024px){.showcase-text h3{font-size:1.6rem}}
-.showcase-text p{font-size:14px;color:#64748b;line-height:1.9;margin-bottom:16px}
-@media(min-width:1024px){.showcase-text p{font-size:15px}}
+.showcase-text h3{font-size:1.4rem;font-weight:900;color:#0f172a;margin-bottom:12px;line-height:1.4;letter-spacing:-.3px}
+@media(min-width:1024px){.showcase-text h3{font-size:1.7rem}}
+.showcase-text p{font-size:15px;color:#64748b;line-height:1.9;margin-bottom:20px;font-weight:500}
+@media(min-width:1024px){.showcase-text p{font-size:16px}}
 
 .showcase-list-items{list-style:none}
-.showcase-list-items li{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f1f5f9;font-size:13px;color:#475569;font-weight:500}
+.showcase-list-items li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid #f1f5f9;font-size:14px;color:#475569;font-weight:500}
 .showcase-list-items li:last-child{border-bottom:none}
-.showcase-list-items li .check-dot{width:18px;height:18px;border-radius:50%;background:#ecfdf5;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.showcase-list-items li .check-dot svg{width:11px;height:11px;color:#059669}
+.showcase-list-items li .check-dot{width:20px;height:20px;border-radius:50%;background:#ecfdf5;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.showcase-list-items li .check-dot svg{width:12px;height:12px;color:#059669}
 
-.showcase-visual{position:relative;padding:20px;display:flex;align-items:center;justify-content:center;background:linear-gradient(to bottom right,#f8fafc,#f1f5f9)}
-@media(min-width:640px){.showcase-visual{padding:28px}}
-@media(min-width:1024px){.showcase-visual{padding:36px}}
-.showcase-visual .bg-dots-wrap{position:absolute;inset:0;opacity:.5;pointer-events:none;background-image:radial-gradient(rgba(15,23,42,.08) 1px,transparent 1px);background-size:20px 20px}
-.showcase-visual .browser{position:relative;z-index:1;width:100%;background:#fff;border-radius:12px;border:1px solid #e2e8f0;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.showcase-visual .browser-bar{display:flex;align-items:center;gap:5px;padding:9px 10px;background:#f8fafc;border-bottom:1px solid #f1f5f9}
-.showcase-visual .browser-bar .bd{width:9px;height:9px;border-radius:50%}
-.showcase-visual .browser-bar .bd.red{background:#f87171}
-.showcase-visual .browser-bar .bd.yel{background:#fbbf24}
-.showcase-visual .browser-bar .bd.grn{background:#4ade80}
-.showcase-visual .browser-bar .bd-line{flex:1;height:14px;margin:0 7px;background:#fff;border-radius:100px;border:1px solid #e2e8f0}
+.showcase-visual{position:relative;padding:24px;display:flex;align-items:center;justify-content:center;background:linear-gradient(to bottom right,#f8fafc,#f1f5f9)}
+@media(min-width:640px){.showcase-visual{padding:32px}}
+@media(min-width:1024px){.showcase-visual{padding:40px}}
+.showcase-visual .bg-dots-wrap{position:absolute;inset:0;opacity:.4;pointer-events:none;background-image:radial-gradient(rgba(15,23,42,.06) 1px,transparent 1px);background-size:20px 20px}
+.showcase-visual .browser{position:relative;z-index:1;width:100%;background:#fff;border-radius:14px;border:1px solid #e2e8f0;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,.08)}
+.showcase-visual .browser-bar{display:flex;align-items:center;gap:6px;padding:10px 12px;background:#f8fafc;border-bottom:1px solid #f1f5f9}
+.showcase-visual .browser-bar .bd{width:10px;height:10px;border-radius:50%}
+.showcase-visual .browser-bar .bd.red{background:#f87171}.showcase-visual .browser-bar .bd.yel{background:#fbbf24}.showcase-visual .browser-bar .bd.grn{background:#4ade80}
+.showcase-visual .browser-bar .bd-line{flex:1;height:16px;margin:0 8px;background:#fff;border-radius:100px;border:1px solid #e2e8f0}
 .showcase-visual .browser img{width:100%;display:block}
 
-/* Reverse order for alternating layout */
 @media(min-width:1024px){
 .showcase-card.reverse .showcase-text{order:2}
 .showcase-card.reverse .showcase-visual{order:1}
 }
 
+/* ===== GALLERY SECTION ===== */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(min-width:768px){.gallery-grid{grid-template-columns:repeat(3,1fr);gap:22px}}
+@media(min-width:1024px){.gallery-grid{gap:26px}}
+.gallery-item{position:relative;border-radius:18px;overflow:hidden;background:#fff;border:1px solid rgba(226,232,240,.8);box-shadow:0 2px 8px rgba(0,0,0,.03);transition:all .3s}
+.gallery-item:hover{box-shadow:0 15px 35px rgba(148,163,184,.2);transform:translateY(-5px)}
+.gallery-item img{width:100%;height:auto;display:block;transition:transform .4s}
+.gallery-item:hover img{transform:scale(1.04)}
+.gallery-overlay{position:absolute;inset:0;background:rgba(15,23,42,.6);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay svg{width:52px;height:52px;color:#fff;opacity:.9}
+
 /* ===== COMPARE ===== */
-.compare-grid{display:grid;gap:20px}
-@media(min-width:768px){.compare-grid{grid-template-columns:1fr 1fr;gap:24px}}
-.compare-card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.03);transition:box-shadow .3s}
-.compare-card:hover{box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.compare-grid{display:grid;gap:22px}
+@media(min-width:768px){.compare-grid{grid-template-columns:1fr 1fr;gap:28px}}
+.compare-card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.03);transition:box-shadow .3s}
+.compare-card:hover{box-shadow:0 15px 35px rgba(0,0,0,.08)}
 .compare-card.before{border:1px solid #e2e8f0}
-.compare-card.after{border:2px solid #a7f3d0;box-shadow:0 12px 30px rgba(16,185,129,.12);position:relative}
-.compare-card .cc-header{padding:10px 16px;display:flex;align-items:center;justify-content:center;gap:7px}
+.compare-card.after{border:2px solid #a7f3d0;box-shadow:0 15px 35px rgba(16,185,129,.12);position:relative}
+.compare-card .cc-header{padding:12px 18px;display:flex;align-items:center;justify-content:center;gap:8px}
 .compare-card.before .cc-header{background:linear-gradient(to left,#ef4444,#f43f5e)}
 .compare-card.after .cc-header{background:linear-gradient(to left,#10b981,#0d9488)}
-.compare-card .cc-header-circle{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
-.compare-card .cc-header-circle svg{width:13px;height:13px;color:#fff}
-.compare-card .cc-header span{color:#fff;font-weight:800;font-size:13px}
-.compare-card .cc-img-wrap{padding:6px;background:#f8fafc}
-.compare-card .cc-img-wrap img{width:100%;border-radius:12px;border:1px solid #e2e8f0}
-.compare-card .cc-note{padding:12px 16px;text-align:center;border-top:1px solid #f1f5f9;font-size:13px;font-weight:600}
+.compare-card .cc-header-circle{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
+.compare-card .cc-header-circle svg{width:14px;height:14px;color:#fff}
+.compare-card .cc-header span{color:#fff;font-weight:800;font-size:14px}
+.compare-card .cc-img-wrap{padding:8px;background:#f8fafc}
+.compare-card .cc-img-wrap img{width:100%;border-radius:14px;border:1px solid #e2e8f0}
+.compare-card .cc-note{padding:14px 18px;text-align:center;border-top:1px solid #f1f5f9;font-size:14px;font-weight:600}
 .compare-card.before .cc-note{color:#b91c1c;background:rgba(254,242,242,.5)}
 .compare-card.after .cc-note{color:#047857;background:rgba(236,253,245,.5)}
-
-.cc-badge{position:absolute;top:-10px;left:16px;background:#10b981;color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:100px;box-shadow:0 4px 10px rgba(16,185,129,.3);z-index:1}
+.cc-badge{position:absolute;top:-12px;left:18px;background:#10b981;color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:100px;box-shadow:0 6px 15px rgba(16,185,129,.3);z-index:1}
 
 /* ===== SPECIAL CARDS ===== */
-.special-grid{display:grid;gap:18px}
-@media(min-width:768px){.special-grid{grid-template-columns:1fr 1fr;gap:20px}}
-.special-card{position:relative;overflow:hidden;border-radius:22px;padding:30px 24px;color:#fff}
-@media(min-width:1024px){.special-card{padding:40px 32px}}
+.special-grid{display:grid;gap:20px}
+@media(min-width:768px){.special-grid{grid-template-columns:1fr 1fr;gap:24px}}
+.special-card{position:relative;overflow:hidden;border-radius:24px;padding:36px 28px;color:#fff}
+@media(min-width:1024px){.special-card{padding:48px 36px}}
 .special-card.fonts{background:linear-gradient(to bottom right,#0f172a,#1e293b,#1e1b4b)}
 .special-card.presets{background:linear-gradient(to bottom right,#ec4899,#f43f5e,#be123c)}
-.special-card .sc-blur1{position:absolute;top:0;right:0;width:200px;height:200px;border-radius:50%;filter:blur(60px);pointer-events:none}
+.special-card .sc-blur1{position:absolute;top:0;right:0;width:250px;height:250px;border-radius:50%;filter:blur(70px);pointer-events:none;will-change:transform}
 .special-card.fonts .sc-blur1{background:rgba(99,102,241,.2)}
-.special-card.fonts .sc-blur2{position:absolute;bottom:0;left:0;width:160px;height:160px;border-radius:50%;filter:blur(60px);pointer-events:none;background:rgba(139,92,246,.1)}
-.special-card.presets .sc-blur1{background:rgba(255,255,255,.1);width:200px;height:200px}
+.special-card.fonts .sc-blur2{position:absolute;bottom:0;left:0;width:200px;height:200px;border-radius:50%;filter:blur(70px);pointer-events:none;background:rgba(139,92,246,.1)}
+.special-card.presets .sc-blur1{background:rgba(255,255,255,.1);width:250px;height:250px}
 
-.special-card .sc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;position:relative}
-.special-card .sc-icon-circle{width:52px;height:52px;border-radius:16px;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
-.special-card .sc-icon-circle svg{width:26px;height:26px}
-.special-card .sc-watermark{font-size:6rem;font-weight:900;line-height:1;opacity:.1;color:#fff}
-@media(min-width:1024px){.special-card .sc-watermark{font-size:7rem}}
-.special-card .sc-big{font-size:3rem;font-weight:900;display:inline}
-@media(min-width:1024px){.special-card .sc-big{font-size:3.6rem}}
-.special-card .sc-big-label{font-size:1.1rem;font-weight:700;opacity:.85;display:inline;margin-right:8px}
-.special-card .sc-desc{font-size:13px;opacity:.75;line-height:1.8;max-width:300px;margin-bottom:18px}
-.special-card .sc-chips{display:flex;flex-wrap:wrap;gap:7px;position:relative}
-.special-card .sc-chip{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);font-size:11px;font-weight:700;padding:5px 12px;border-radius:100px}
-.special-card .sc-dot-row{display:flex;gap:7px;position:relative}
-.special-card .sc-dot{width:40px;height:40px;border-radius:12px;border:2px solid rgba(255,255,255,.3);box-shadow:0 6px 15px rgba(0,0,0,.15)}
+.special-card .sc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;position:relative}
+.special-card .sc-icon-circle{width:56px;height:56px;border-radius:18px;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
+.special-card .sc-icon-circle svg{width:28px;height:28px}
+.special-card .sc-watermark{font-size:6.5rem;font-weight:900;line-height:1;opacity:.08;color:#fff}
+@media(min-width:1024px){.special-card .sc-watermark{font-size:8rem}}
+.special-card .sc-big{font-size:3.2rem;font-weight:900;display:inline}
+@media(min-width:1024px){.special-card .sc-big{font-size:3.8rem}}
+.special-card .sc-big-label{font-size:1.2rem;font-weight:700;opacity:.85;display:inline;margin-right:10px}
+.special-card .sc-desc{font-size:14px;opacity:.8;line-height:1.8;max-width:320px;margin-bottom:22px;font-weight:500}
+.special-card .sc-chips{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.special-card .sc-chip{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px}
+.special-card .sc-dot-row{display:flex;gap:8px;position:relative}
+.special-card .sc-dot{width:44px;height:44px;border-radius:14px;border:2px solid rgba(255,255,255,.3);box-shadow:0 8px 20px rgba(0,0,0,.15)}
 .sc-dot-1{background:linear-gradient(to bottom right,#6366f1,#8b5cf6)}
 .sc-dot-2{background:linear-gradient(to bottom right,#ec4899,#f43f5e)}
 .sc-dot-3{background:linear-gradient(to bottom right,#10b981,#06b6d4)}
@@ -284,64 +272,76 @@ img{display:block;max-width:100%;height:auto}
 .sc-dot-5{background:linear-gradient(to bottom right,#1e293b,#6366f1)}
 
 /* ===== INSTALL ===== */
-.install-grid{position:relative;display:grid;grid-template-columns:1fr;gap:20px}
-@media(min-width:640px){.install-grid{grid-template-columns:repeat(2,1fr);gap:22px}}
-@media(min-width:1024px){.install-grid{grid-template-columns:repeat(4,1fr);gap:14px}}
-
+.install-grid{position:relative;display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:640px){.install-grid{grid-template-columns:repeat(2,1fr);gap:26px}}
+@media(min-width:1024px){.install-grid{grid-template-columns:repeat(4,1fr);gap:16px}}
 .install-line{display:none}
-@media(min-width:1024px){.install-line{display:block;position:absolute;top:30px;right:12.5%;left:12.5%;height:2px;background:linear-gradient(to left,#c7d2fe,#ddd6fe,#fbcfe8)}}
-
+@media(min-width:1024px){.install-line{display:block;position:absolute;top:32px;right:12.5%;left:12.5%;height:2px;background:linear-gradient(to left,#c7d2fe,#ddd6fe,#fbcfe8)}}
 .install-step{position:relative;text-align:center}
-.install-step .step-circle{position:relative;z-index:1;width:58px;height:58px;border-radius:16px;background:linear-gradient(to bottom right,#0f172a,#334155);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;margin:0 auto 14px;box-shadow:0 8px 20px rgba(15,23,42,.2)}
-.install-step h4{font-size:14px;font-weight:800;color:#0f172a;margin-bottom:4px}
-.install-step p{font-size:12px;color:#94a3b8}
+.install-step .step-circle{position:relative;z-index:1;width:64px;height:64px;border-radius:18px;background:linear-gradient(to bottom right,#0f172a,#334155);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:900;margin:0 auto 16px;box-shadow:0 10px 25px rgba(15,23,42,.2);transition:transform .3s}
+.install-step:hover .step-circle{transform:translateY(-4px)}
+.install-step h4{font-size:15px;font-weight:800;color:#0f172a;margin-bottom:6px}
+.install-step p{font-size:13px;color:#64748b;font-weight:500}
 
 /* ===== COMPATIBILITY ===== */
-.compat-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.compat-chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #e2e8f0;padding:10px 18px;border-radius:100px;box-shadow:0 1px 3px rgba(0,0,0,.03);transition:all .3s}
-.compat-chip:hover{box-shadow:0 8px 20px rgba(0,0,0,.06);transform:translateY(-2px)}
-.compat-chip .cc{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.compat-chip .cc.purple{background:#a78bfa}
-.compat-chip .cc.pink{background:#f472b6}
-.compat-chip .cc.pink-dark{background:#db2777}
-.compat-chip .cc.amber{background:#f59e0b}
-.compat-chip .cc.blue{background:#60a5fa}
-.compat-chip span.lbl{font-size:13px;font-weight:700;color:#1e293b}
+.compat-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.compat-chip{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid #e2e8f0;padding:12px 20px;border-radius:100px;box-shadow:0 2px 6px rgba(0,0,0,.03);transition:all .3s}
+.compat-chip:hover{box-shadow:0 10px 25px rgba(0,0,0,.06);transform:translateY(-3px)}
+.compat-chip .cc{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.compat-chip .cc.purple{background:#a78bfa}.compat-chip .cc.pink{background:#f472b6}.compat-chip .cc.pink-dark{background:#db2777}
+.compat-chip .cc.amber{background:#f59e0b}.compat-chip .cc.blue{background:#60a5fa}
+.compat-chip span.lbl{font-size:14px;font-weight:700;color:#1e293b}
 
 /* ===== FOOTER ===== */
 .footer{position:relative;background:linear-gradient(to bottom right,#0f172a,#0f172a,#1e1b4b);color:#fff;overflow:hidden}
-.footer .footer-grid-bg{position:absolute;inset:0;opacity:.08;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px);background-size:32px 32px}
-.footer .footer-blur1{position:absolute;top:0;right:33%;width:320px;height:320px;border-radius:50%;filter:blur(80px);pointer-events:none;background:rgba(99,102,241,.2)}
-.footer .footer-blur2{position:absolute;bottom:0;left:33%;width:320px;height:320px;border-radius:50%;filter:blur(80px);pointer-events:none;background:rgba(139,92,246,.1)}
-.footer .footer-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:72px 20px;text-align:center}
-@media(min-width:1024px){.footer .footer-inner{padding:80px 32px}}
-.footer h2{font-size:1.8rem;font-weight:900;letter-spacing:-.2px;margin-bottom:12px;line-height:1.4}
-@media(min-width:640px){.footer h2{font-size:2.4rem}}
-@media(min-width:1024px){.footer h2{font-size:2.8rem}}
-.footer .footer-desc{color:rgba(255,255,255,.7);max-width:500px;margin:0 auto 28px;font-size:14px;line-height:1.9}
-@media(min-width:640px){.footer .footer-desc{font-size:15px}}
+.footer .footer-grid-bg{position:absolute;inset:0;opacity:.06;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px);background-size:32px 32px}
+.footer .footer-blur1{position:absolute;top:0;right:33%;width:400px;height:400px;border-radius:50%;filter:blur(90px);pointer-events:none;background:rgba(99,102,241,.2)}
+.footer .footer-blur2{position:absolute;bottom:0;left:33%;width:400px;height:400px;border-radius:50%;filter:blur(90px);pointer-events:none;background:rgba(139,92,246,.1)}
+.footer .footer-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:80px 20px;text-align:center}
+@media(min-width:1024px){.footer .footer-inner{padding:90px 32px}}
+.footer h2{font-size:2rem;font-weight:900;letter-spacing:-.3px;margin-bottom:16px;line-height:1.4}
+@media(min-width:640px){.footer h2{font-size:2.6rem}}
+@media(min-width:1024px){.footer h2{font-size:3rem}}
+.footer .footer-desc{color:rgba(255,255,255,.7);max-width:550px;margin:0 auto 32px;font-size:1.05rem;line-height:1.9;font-weight:500}
+@media(min-width:640px){.footer .footer-desc{font-size:1.1rem}}
 
-.footer-trust{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 22px;margin-bottom:32px}
-.footer-trust-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.8)}
-.footer-trust-item .ft-dot{width:18px;height:18px;border-radius:50%;background:rgba(16,185,129,.2);display:flex;align-items:center;justify-content:center}
-.footer-trust-item .ft-dot svg{width:11px;height:11px;color:#34d399}
-.footer-trust-item span{font-size:13px;font-weight:600}
+.footer-trust{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 28px;margin-bottom:36px}
+.footer-trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85)}
+.footer-trust-item .ft-dot{width:22px;height:22px;border-radius:50%;background:rgba(16,185,129,.2);display:flex;align-items:center;justify-content:center}
+.footer-trust-item .ft-dot svg{width:12px;height:12px;color:#34d399}
+.footer-trust-item span{font-size:14px;font-weight:600}
 
-.footer-badge-wrap{display:inline-flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);padding:16px 32px;border-radius:18px;margin-bottom:0}
-.footer-badge-wrap .fb-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
-.footer-badge-wrap img{height:34px;object-fit:contain;filter:brightness(0) invert(1);opacity:.9}
+.footer-badge-wrap{display:inline-flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);padding:18px 36px;border-radius:20px;margin-bottom:0}
+.footer-badge-wrap .fb-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px}
+.footer-badge-wrap img{height:36px;object-fit:contain;filter:brightness(0) invert(1);opacity:.9}
 
-/* SVG icon defaults */
+/* ===== LIGHTBOX ===== */
+.lightbox{position:fixed;inset:0;background:rgba(15,23,42,.96);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
+.lightbox.active{display:flex}
+.lightbox-content{position:relative;max-width:90vw;max-height:90vh}
+.lightbox-img{max-width:100%;max-height:85vh;border-radius:16px;box-shadow:0 30px 60px rgba(0,0,0,.6);transition:opacity .2s}
+.lightbox-close{position:absolute;top:-45px;right:0;background:rgba(255,255,255,.1);border:none;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;color:#fff}
+.lightbox-close:hover{background:rgba(255,255,255,.2);transform:rotate(90deg)}
+.lightbox-close svg{width:26px;height:26px}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:none;border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;color:#fff}
+.lightbox-nav:hover{background:rgba(255,255,255,.2)}
+.lightbox-prev{left:-75px}
+.lightbox-next{right:-75px}
+.lightbox-nav svg{width:30px;height:30px}
+@media(max-width:768px){
+.lightbox-nav{display:none}
+.lightbox-close{top:15px;right:15px;background:rgba(255,255,255,.15)}
+}
+
 svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-/* ===== RESPONSIVE FINE-TUNING ===== */
 @media(max-width:639px){
   .feat-grid{grid-template-columns:repeat(2,1fr)}
-  .sec{padding:48px 0}
-  .sec-sm{padding:40px 0}
-  .hero{padding:40px 0 48px}
-  .hero h1{font-size:1.7rem}
-  .footer .footer-inner{padding:56px 16px}
+  .sec{padding:56px 0}
+  .sec-sm{padding:48px 0}
+  .hero{padding:48px 0 56px}
+  .hero h1{font-size:1.9rem}
+  .footer .footer-inner{padding:64px 16px}
 }
 </style>
 </head>
@@ -356,7 +356,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
     <div class="hero-row">
       <div class="hero-copy">
         <div class="hero-badge">
-          <span class="hero-badge-dot animate-pulse-dot"></span>
+          <span class="hero-badge-dot animate-pulse-glow"></span>
           شخصی‌سازی و مدیریت پیشخوان وردپرس
         </div>
         <h1>پیشخوان وردپرس خود را<br>با <span class="grad-wrap"><span class="grad">پیشیار</span><svg viewBox="0 0 200 12" fill="none"><path d="M2 9 Q 50 2, 100 6 T 198 5" stroke="url(#g1)" stroke-width="3" stroke-linecap="round" fill="none"/><defs><linearGradient id="g1" x1="0" y1="0" x2="200" y2="0"><stop offset="0%" stop-color="#ec4899"/><stop offset="100%" stop-color="#6366f1"/></linearGradient></defs></svg></span> متحول کنید</h1>
@@ -373,11 +373,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
       <div class="hero-preview-wrap">
         <div class="hero-preview-main">
           <div class="mac-bar"><span class="mac-dot red"></span><span class="mac-dot yel"></span><span class="mac-dot grn"></span><span class="mac-line"></span></div>
-          <img src="https://uploadkon.ir/uploads/63c204_261.png" alt="پیش‌نمایش">
-        </div>
-        <div class="hero-preview-sml">
-          <div class="mac-bar"><span class="mac-dot red"></span><span class="mac-dot yel"></span><span class="mac-dot grn"></span></div>
-          <img src="https://uploadkon.ir/uploads/5ad704_263.png" alt="فونت">
+          <img src="https://uploadkon.ir/uploads/63c204_261.png" alt="پیش‌نمایش" class="lightbox-trigger">
         </div>
         <div class="hero-preview-badge">
           <div class="flex">
@@ -402,7 +398,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
     <div class="hero-mob-preview">
       <div class="mob-wrap">
         <div class="mac-bar"><span class="mac-dot red"></span><span class="mac-dot yel"></span><span class="mac-dot grn"></span><span class="mac-line"></span></div>
-        <img src="https://uploadkon.ir/uploads/63c204_261.png" alt="پیش‌نمایش">
+        <img src="https://uploadkon.ir/uploads/63c204_261.png" alt="پیش‌نمایش" class="lightbox-trigger">
       </div>
     </div>
   </div>
@@ -410,8 +406,12 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
 
 <!-- FEATURES -->
 <section class="sec">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:44px">
+  <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+    <div class="absolute top-20 left-10 w-32 h-32 bg-indigo-100 rounded-full blur-3xl opacity-40 animate-float-slow"></div>
+    <div class="absolute bottom-20 right-10 w-40 h-40 bg-rose-100 rounded-full blur-3xl opacity-40 animate-float"></div>
+  </div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="text-center" style="margin-bottom:48px">
       <div class="label-pill label-indigo"><span class="label-dot"></span>قابلیت‌ها</div>
       <h2 class="sec-title">۱۰ بخش قدرتمند در یک افزونه</h2>
       <p class="sec-desc">هر آنچه برای مدیریت حرفه‌ای پیشخوان وردپرس نیاز دارید، یکجا</p>
@@ -431,11 +431,11 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
       </div>
       <div class="feat-card">
         <div class="feat-icon-wrap feat-icon-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4V2"/><path d="M15 16v-2"/><path d="M8 9h2"/><path d="M20 9h2"/><path d="M3 21l9-9"/></svg></div>
-        <h4>شخصی‌سازی</h4><p>White Label کامل</p>
+        <h4>شخصی‌سازی صفحه ورود  </h4><p>مدیریت لوگو، رنگ و پس زمینه</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon-wrap feat-icon-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-        <h4>مدیریت منو</h4><p>کنترل بر اساس نقش کاربری</p>
+        <h4>مدیریت منو</h4><p>نمایش درختی و مخفی‌سازی</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon-wrap feat-icon-6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
@@ -463,8 +463,9 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
 
 <!-- SHOWCASE -->
 <section class="sec-sm" style="background:#fff;border-top:1px solid rgba(226,232,240,.6);border-bottom:1px solid rgba(226,232,240,.6)">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:48px">
+  <div class="absolute top-1/2 right-0 w-64 h-64 bg-violet-100 rounded-full blur-3xl opacity-30 animate-pulse-glow pointer-events-none"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="text-center" style="margin-bottom:52px">
       <div class="label-pill label-violet"><span class="label-dot"></span>پیش‌نمایش</div>
       <h2 class="sec-title">نگاهی نزدیک به هر بخش</h2>
       <p class="sec-desc">تمام قابلیت‌ها با رابط کاربری ساده و حرفه‌ای</p>
@@ -475,7 +476,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
       <!-- 1 -->
       <div class="showcase-card">
         <div class="showcase-text">
-          <div class="sc-num">۰۱</div>
+          <div class="sc-num">۱</div>
           <span class="showcase-tag rose"><span class="tag-dot"></span>پریست‌های رنگی</span>
           <h3>پریست‌های رنگی</h3>
           <p>بیش از ۳۰ پریست رنگی حرفه‌ای در ۶ سبک متنوع — اعمال با یک کلیک روی تمام المان‌های پیشخوان و صفحه ورود وردپرس.</p>
@@ -490,7 +491,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="bg-dots-wrap"></div>
           <div class="browser">
             <div class="browser-bar"><span class="bd red"></span><span class="bd yel"></span><span class="bd grn"></span><span class="bd-line"></span></div>
-            <img src="https://uploadkon.ir/uploads/63c204_261.png" alt="پریست‌های رنگی">
+            <img src="https://uploadkon.ir/uploads/63c204_261.png" alt="پریست‌های رنگی" class="lightbox-trigger">
           </div>
         </div>
       </div>
@@ -498,7 +499,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
       <!-- 2 -->
       <div class="showcase-card reverse">
         <div class="showcase-text">
-          <div class="sc-num">۰۲</div>
+          <div class="sc-num">۲</div>
           <span class="showcase-tag amber"><span class="tag-dot"></span>رنگ‌های سفارشی</span>
           <h3>رنگ‌های سفارشی</h3>
           <p>ویرایشگر هفت‌رنگ با پیش‌نمایش زنده — رنگ مورد نظر را انتخاب کنید و بلافاصله تغییر را ببینید.</p>
@@ -513,7 +514,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="bg-dots-wrap"></div>
           <div class="browser">
             <div class="browser-bar"><span class="bd red"></span><span class="bd yel"></span><span class="bd grn"></span><span class="bd-line"></span></div>
-            <img src="https://uploadkon.ir/uploads/8d2504_262.png" alt="رنگ‌های سفارشی">
+            <img src="https://uploadkon.ir/uploads/8d2504_262.png" alt="رنگ‌های سفارشی" class="lightbox-trigger">
           </div>
         </div>
       </div>
@@ -536,7 +537,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="bg-dots-wrap"></div>
           <div class="browser">
             <div class="browser-bar"><span class="bd red"></span><span class="bd yel"></span><span class="bd grn"></span><span class="bd-line"></span></div>
-            <img src="https://uploadkon.ir/uploads/5ad704_263.png" alt="مدیریت فونت">
+            <img src="https://uploadkon.ir/uploads/5ad704_263.png" alt="مدیریت فونت" class="lightbox-trigger">
           </div>
         </div>
       </div>
@@ -546,7 +547,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
         <div class="showcase-text">
           <div class="sc-num">۰۴</div>
           <span class="showcase-tag violet"><span class="tag-dot"></span>شخصی‌سازی</span>
-          <h3>شخصی‌سازی White Label</h3>
+          <h3>شخصی‌سازی صفحه ورود و پیشخوان</h3>
           <p>لوگوی صفحه ورود، لوگوی نوار ادمین، متن فوتر و صفحه ورود اختصاصی — همه با برند خودتان.</p>
           <ul class="showcase-list-items">
             <li><span class="check-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>لوگوی صفحه ورود</li>
@@ -560,7 +561,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="bg-dots-wrap"></div>
           <div class="browser">
             <div class="browser-bar"><span class="bd red"></span><span class="bd yel"></span><span class="bd grn"></span><span class="bd-line"></span></div>
-            <img src="https://uploadkon.ir/uploads/de7d04_264.png" alt="شخصی‌سازی">
+            <img src="https://uploadkon.ir/uploads/de7d04_264.png" alt="شخصی‌سازی" class="lightbox-trigger">
           </div>
         </div>
       </div>
@@ -574,7 +575,6 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <p>نمایش درختی منوها با کنترل دسترسی بر اساس نقش کاربری — هر کاربر فقط آنچه نیاز دارد می‌بیند.</p>
           <ul class="showcase-list-items">
             <li><span class="check-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>نمایش درختی منوها</li>
-            <li><span class="check-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>کنترل بر اساس نقش کاربری</li>
             <li><span class="check-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>مخفی کردن منو یا زیرمنو</li>
             <li><span class="check-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>جستجوی سریع</li>
           </ul>
@@ -583,7 +583,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="bg-dots-wrap"></div>
           <div class="browser">
             <div class="browser-bar"><span class="bd red"></span><span class="bd yel"></span><span class="bd grn"></span><span class="bd-line"></span></div>
-            <img src="https://uploadkon.ir/uploads/5ad704_265.png" alt="مدیریت منو">
+            <img src="https://uploadkon.ir/uploads/5ad704_265.png" alt="مدیریت منو" class="lightbox-trigger">
           </div>
         </div>
       </div>
@@ -607,7 +607,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="bg-dots-wrap"></div>
           <div class="browser">
             <div class="browser-bar"><span class="bd red"></span><span class="bd yel"></span><span class="bd grn"></span><span class="bd-line"></span></div>
-            <img src="https://uploadkon.ir/uploads/de7d04_266.png" alt="تست سلامت">
+            <img src="https://uploadkon.ir/uploads/de7d04_266.png" alt="تست سلامت" class="lightbox-trigger">
           </div>
         </div>
       </div>
@@ -630,7 +630,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="bg-dots-wrap"></div>
           <div class="browser">
             <div class="browser-bar"><span class="bd red"></span><span class="bd yel"></span><span class="bd grn"></span><span class="bd-line"></span></div>
-            <img src="https://uploadkon.ir/uploads/a87f04_267.png" alt="ابزارها">
+            <img src="https://uploadkon.ir/uploads/a87f04_267.png" alt="ابزارها" class="lightbox-trigger">
           </div>
         </div>
       </div>
@@ -653,7 +653,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="bg-dots-wrap"></div>
           <div class="browser">
             <div class="browser-bar"><span class="bd red"></span><span class="bd yel"></span><span class="bd grn"></span><span class="bd-line"></span></div>
-            <img src="https://uploadkon.ir/uploads/c46104_268.png" alt="دسترسی‌پذیری">
+            <img src="https://uploadkon.ir/uploads/c46104_268.png" alt="دسترسی‌پذیری" class="lightbox-trigger">
           </div>
         </div>
       </div>
@@ -676,7 +676,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="bg-dots-wrap"></div>
           <div class="browser">
             <div class="browser-bar"><span class="bd red"></span><span class="bd yel"></span><span class="bd grn"></span><span class="bd-line"></span></div>
-            <img src="https://uploadkon.ir/uploads/af2004_269.png" alt="تاریخچه">
+            <img src="https://uploadkon.ir/uploads/af2004_269.png" alt="تاریخچه" class="lightbox-trigger">
           </div>
         </div>
       </div>
@@ -697,7 +697,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="bg-dots-wrap"></div>
           <div class="browser">
             <div class="browser-bar"><span class="bd red"></span><span class="bd yel"></span><span class="bd grn"></span><span class="bd-line"></span></div>
-            <img src="https://uploadkon.ir/uploads/eca404_2610.png" alt="آموزش">
+            <img src="https://uploadkon.ir/uploads/eca404_2610.png" alt="آموزش" class="lightbox-trigger">
           </div>
         </div>
       </div>
@@ -706,10 +706,61 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
   </div>
 </section>
 
-<!-- COMPARE -->
+<!-- COLOR PRESETS GALLERY -->
 <section class="sec">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:44px">
+  <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-rose-100 rounded-full blur-3xl opacity-30 animate-float pointer-events-none"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="text-center" style="margin-bottom:48px">
+      <div class="label-pill label-rose"><span class="label-dot"></span>گالری تصاویر</div>
+      <h2 class="sec-title">نمونه‌هایی از تم‌های رنگی</h2>
+      <p class="sec-desc">۶ نمونه از تم‌های رنگی متنوع و حرفه‌ای موجود در افزونه</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item cursor-pointer lightbox-trigger">
+        <img src="https://ravanclass.com/wp-content/uploads/2026/08/Screenshot-2026-08-02-160851.png" alt="تم رنگی ۱">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item cursor-pointer lightbox-trigger">
+        <img src="https://ravanclass.com/wp-content/uploads/2026/08/Screenshot-2026-08-02-160922.png" alt="تم رنگی ۲">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item cursor-pointer lightbox-trigger">
+        <img src="https://ravanclass.com/wp-content/uploads/2026/08/Screenshot-2026-08-02-160953.png" alt="تم رنگی ۳">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item cursor-pointer lightbox-trigger">
+        <img src="https://ravanclass.com/wp-content/uploads/2026/08/Screenshot-2026-08-02-161130.png" alt="تم رنگی ۴">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item cursor-pointer lightbox-trigger">
+        <img src="https://ravanclass.com/wp-content/uploads/2026/08/Screenshot-2026-08-02-161052.png" alt="تم رنگی ۵">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item cursor-pointer lightbox-trigger">
+        <img src="https://ravanclass.com/wp-content/uploads/2026/08/Screenshot-2026-08-02-161411.png" alt="تم رنگی ۶">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="sec" style="background:#fff;border-top:1px solid rgba(226,232,240,.6);border-bottom:1px solid rgba(226,232,240,.6)">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-30 animate-pulse-glow pointer-events-none"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="text-center" style="margin-bottom:48px">
       <div class="label-pill label-emerald"><span class="label-dot"></span>مقایسه</div>
       <h2 class="sec-title">قبل و بعد از فعال‌سازی</h2>
       <p class="sec-desc">تفاوت چشمگیر در ظاهر و تجربه پیشخوان</p>
@@ -720,7 +771,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="cc-header-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
           <span>قبل از فعال‌سازی</span>
         </div>
-        <div class="cc-img-wrap"><img src="https://uploadkon.ir/uploads/181603_26%D9%82%D8%A8%D9%84-%D8%A7%D8%B2-%D9%81%D8%B9%D8%A7%D9%84-%D8%B4%D8%AF%D9%86.png" alt="قبل از فعال‌سازی"></div>
+        <div class="cc-img-wrap"><img src="https://uploadkon.ir/uploads/181603_26%D9%82%D8%A8%D9%84-%D8%A7%D8%B2-%D9%81%D8%B9%D8%A7%D9%84-%D8%B4%D8%AF%D9%86.png" alt="قبل از فعال‌سازی" class="lightbox-trigger"></div>
         <div class="cc-note">افزونه نصب شده اما منویی در دسترس نیست</div>
       </div>
       <div class="compare-card after">
@@ -729,7 +780,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
           <div class="cc-header-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <span>بعد از فعال‌سازی</span>
         </div>
-        <div class="cc-img-wrap"><img src="https://uploadkon.ir/uploads/181603_26%D8%A8%D8%B9%D8%AF-%D8%A7%D8%B2-%D9%81%D8%B9%D8%A7%D9%84-%D8%B4%D8%AF%D9%86.png" alt="بعد از فعال‌سازی"></div>
+        <div class="cc-img-wrap"><img src="https://uploadkon.ir/uploads/181603_26%D8%A8%D8%B9%D8%AF-%D8%A7%D8%B2-%D9%81%D8%B9%D8%A7%D9%84-%D8%B4%D8%AF%D9%86.png" alt="بعد از فعال‌سازی" class="lightbox-trigger"></div>
         <div class="cc-note">دسترسی کامل به ۱۰ بخش تخصصی افزونه</div>
       </div>
     </div>
@@ -741,7 +792,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
   <div class="container">
     <div class="special-grid">
       <div class="special-card fonts">
-        <div class="sc-blur1"></div><div class="sc-blur2"></div>
+        <div class="sc-blur1 animate-float-slow"></div><div class="sc-blur2 animate-float"></div>
         <div class="sc-top">
           <div class="sc-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div>
           <div class="sc-watermark">Aa</div>
@@ -755,7 +806,7 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
         </div>
       </div>
       <div class="special-card presets">
-        <div class="sc-blur1"></div>
+        <div class="sc-blur1 animate-pulse-glow"></div>
         <div class="sc-top">
           <div class="sc-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.5-.7 1.5-1.5 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.8.7-1.5 1.5-1.5H16c3.3 0 6-2.7 6-6 0-5-4.5-8.8-10-8.8z"/><circle cx="7.5" cy="11.5" r="1.5"/><circle cx="10.5" cy="7.5" r="1.5"/><circle cx="16.5" cy="11.5" r="1.5"/><circle cx="14.5" cy="7.5" r="1.5"/></svg></div>
           <div class="sc-watermark">۳۰+</div>
@@ -778,8 +829,9 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
 
 <!-- INSTALL -->
 <section class="sec-sm" style="background:#fff;border-top:1px solid rgba(226,232,240,.6);border-bottom:1px solid rgba(226,232,240,.6)">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:44px">
+  <div class="absolute top-0 right-0 w-full h-1 bg-gradient-to-l from-indigo-200 via-violet-200 to-rose-200"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="text-center" style="margin-bottom:48px">
       <div class="label-pill label-blue"><span class="label-dot"></span>راهنما</div>
       <h2 class="sec-title">نصب در ۴ قدم ساده</h2>
       <p class="sec-desc">در کمتر از دو دقیقه افزونه آماده استفاده است</p>
@@ -808,8 +860,9 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
 
 <!-- COMPATIBILITY -->
 <section class="sec-sm">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:36px">
+  <div class="absolute bottom-10 right-10 w-40 h-40 bg-amber-100 rounded-full blur-3xl opacity-40 animate-float pointer-events-none"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="text-center" style="margin-bottom:40px">
       <div class="label-pill label-amber"><span class="label-dot"></span>سازگاری</div>
       <h2 class="sec-title">سازگار با افزونه‌های محبوب</h2>
       <p class="sec-desc">پیشیار با تمام نسخه‌های وردپرس و افزونه‌های پرمصرف سازگار است</p>
@@ -827,8 +880,8 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-grid-bg"></div>
-  <div class="footer-blur1"></div>
-  <div class="footer-blur2"></div>
+  <div class="footer-blur1 animate-float-slow"></div>
+  <div class="footer-blur2 animate-float"></div>
   <div class="footer-inner">
     <h2>همین امروز پیشخوان خود را<br>متحول کنید</h2>
     <p class="footer-desc">راهکار جامع شخصی‌سازی، برندسازی و بهینه‌سازی پیشخوان وردپرس</p>
@@ -853,6 +906,82 @@ svg.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;strok
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <div class="lightbox-content">
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  </div>
+  <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+</div>
+
+<script>
+// Lightbox functionality
+let currentImageIndex = 0;
+let lightboxImages = [];
+
+document.addEventListener('DOMContentLoaded', function() {
+  const triggers = document.querySelectorAll('.lightbox-trigger');
+  triggers.forEach((trigger, index) => {
+    trigger.addEventListener('click', function() {
+      const img = this.querySelector('img') || this;
+      lightboxImages = Array.from(document.querySelectorAll('.lightbox-trigger')).map(t => {
+        const i = t.querySelector('img') || t;
+        return i.src;
+      });
+      currentImageIndex = index;
+      openLightbox(img.src);
+    });
+  });
+});
+
+function openLightbox(src) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.src = src;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function changeImage(direction) {
+  currentImageIndex += direction;
+  if (currentImageIndex < 0) currentImageIndex = lightboxImages.length - 1;
+  if (currentImageIndex >= lightboxImages.length) currentImageIndex = 0;
+  
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.style.opacity = '0';
+  setTimeout(() => {
+    lightboxImg.src = lightboxImages[currentImageIndex];
+    lightboxImg.style.opacity = '1';
+  }, 200);
+}
+
+document.addEventListener('keydown', function(e) {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox.classList.contains('active')) return;
+  
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') changeImage(-1);
+  if (e.key === 'ArrowRight') changeImage(1);
+});
+
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+</script>
+
 </body>
 </html>
-
